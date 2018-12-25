@@ -1,0 +1,68 @@
+body{
+    background-color:black;
+    color: white;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    
+}
+.head{
+    padding: 20px 16px 20px 16px; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.logo{
+    font-size: 24px;
+    font-family: 'Arial Black';
+    float: left;
+ }
+.RS{
+    color: #e6686a;
+    margin-right: 4px;
+}
+.card{
+    color: #9a9da2;
+    
+}
+.image{
+  height: 515px;
+  background-image: url(img/rs-cover.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+.headul{
+    list-style: none;
+}
+.clearfix::after{
+content: '';
+display: block;
+clear: both;
+}
+.head>nav{
+    float: right;
+}
+.headul>li{
+float: left;
+margin-left: 17px;
+margin-right: 17px;
+}
+.headul>li>a{
+   font-size: 12px;
+   color: #b7b7b7;
+   text-decoration: none;
+   font-weight: bold; 
+   border-bottom:3px solid transparent; 
+   padding-top: 5px; 
+   padding-bottom: 5px; 
+   display:block; 
+
+}
+.headul>li>a:hover{
+    border-bottom:3px solid #e06567; 
+}
