@@ -1,6 +1,5 @@
 body{
-    background-color:black;
-    color: white;
+    background-color:#efefef;
 }
 *{
     margin: 0;
@@ -10,12 +9,17 @@ a{
     text-decoration: none;
     
 }
+hr{
+    height: 0;
+    border: none;
+    border-top: 1px solid #DEDEDE;
+}
 .head{
     padding: 20px 16px 20px 16px; 
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 96%;
 }
 .logo{
     font-size: 24px;
@@ -36,6 +40,11 @@ a{
   background-position: center center;
   background-size: cover;
 }
+.image>.mask{
+    height: 515px;
+    background-color:rgba(0, 0, 0, 0.8)
+
+}
 .headul{
     list-style: none;
 }
@@ -46,6 +55,8 @@ clear: both;
 }
 .head>nav{
     float: right;
+    padding-top: 3px;
+    padding-bottom: 2px;
 }
 .headul>li{
 float: left;
@@ -65,4 +76,71 @@ margin-right: 17px;
 }
 .headul>li>a:hover{
     border-bottom:3px solid #e06567; 
+}
+.usercard{
+    border: 1px solid red;
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff
+}
+.Introduction>.welcom{
+    background-color: #e6686a;
+    color: white;
+    margin-bottom: 10px;
+    padding: 4px 16px;
+    line-height: 22px;
+    position: relative;
+}
+.welcom>.triangle{
+    display: block;
+    border: 10px solid transparent;
+    border-left-color: #e6686a; 
+    width: 0px;
+    border-top-width: 0px;
+    position: absolute;
+    left: 4px;
+    top: 100%;
+    
+}
+.myimage{
+    float: left;
+    width: 299px;
+    height: 347px ; 
+}
+.myimage>img{
+  width: 299px;
+  background-position: center center;
+  background-size: cover;
+}
+.myimageandIntroduction{
+    padding: 50px;
+}
+.Introduction{
+    float: left;
+    margin-left: 65px;
+    width: 470px;
+}
+.Introduction>h1{
+    margin-top: 40px;
+}
+.Introduction>p{
+    margin-bottom: 20px;
+}
+.usercard dl{
+    margin-top: 20px;
+}
+.usercard dl dt,
+.usercard dl dd
+{
+    float: left;
+    padding: 5px 0;
+}
+.usercard dl dt{
+    width: 30%;
+    font-weight: bold;
+}
+.usercard dl dd{
+    width: 70%;
+    color: #9da0a7;
 }
