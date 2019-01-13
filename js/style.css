@@ -1,0 +1,75 @@
+*{margin: 0;padding: 0;}
+a{
+    text-decoration: none; 
+}
+body{
+    background: red url(./img/1-min.jpg) no-repeat center center;
+    background-size: cover;
+}
+kbd{
+    display: inline-block;
+    text-transform: uppercase; 
+    position: relative;
+}
+kbd > button{
+    position:absolute;
+    right:0;
+    bottom:0;  
+    display: none;
+}
+kbd:hover >button{
+    display: inline-block;
+}
+body{
+    height:100vh;
+}
+main{
+    text-align: center;
+     display: flex; /* 弹性盒模型 */
+      justify-content: center; /*左右居中 */
+       align-items: center;/*垂直居中 */
+       height: 100vh;
+}
+#m1{
+    display: inline-block;
+
+}
+#m1 > div:nth-child(2){
+    margin-left: -22px;
+}
+#m1 > div:nth-child(3){
+    margin-left: -80px;
+}
+.key{
+    width: 47px;
+    height: 69px;
+    border-radius: 4px;
+    padding: 0 12px;
+    color: #fff;
+    font-size: 24px;
+    box-shadow: 0 0 0 1px #1A1B1C, 0 0 0 2px #1F2020, 0 3px 0 2px #080808;
+    /* display: inline-flex;
+    align-items: center;
+    justify-content: center; */
+    margin: 0 12px 12px 0;
+    border: 1px solid #373737;
+    font-family: Helvetica;
+    position: relative;
+    background: linear-gradient(to bottom, #292929 0%,#111111 100%);
+}
+.wrapper{
+    /* background: rgba(255, 255, 255, 0.2); */
+    /* border-radius: 10px; */
+
+}
+.key img{
+    width: 16px ;
+    height:16px ;
+    position: absolute;
+    
+}
+.key .text{
+    position: absolute;
+    left: 4px;
+    top:  2px;
+}

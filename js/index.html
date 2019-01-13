@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <title>我的导航</title>
+</head>
+
+<body>
+    <header>
+    </header>
+
+    <main>
+        <div class="wrapper" id="m1">
+
+        </div>
+    </main>
+
+    <footer>
+    </footer>
+    <script>
+        var keys = [['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'], ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'], ['z', 'x', 'c', 'v', 'b', 'n', 'm']];
+        var hash = { 'q': 'qq.com', 'w': 'weibo.com', 'e': 'ele.me', 'r': 'renren.com', 't': 'tmall.com', 'y': 'youtube.com', 'u': 'uc.com', 'i': 'iqiyi.com', 'o': 'opera.com', 'p': undefined, 'a': '1688.com', 's': 'sohu.com', 'z': 'zhihu.com', 'm': 'www.mcdonalds.com.cn' }
+        var hashInLocalStorage = JSON.parse(localStorage.getItem('zzz') || 'null')
+        if (hashInLocalStorage) {
+            hash = hashInLocalStorage
+        }
+        index = 0
+        
+        while (index < keys.length) {
+            div1 = document.createElement('div')
+            m1.appendChild(div1)
+            div1.className = "row"
+            row = keys[index]
+            index2 = 0
+            while (index2 < row.length) {
+                kbd1 = document.createElement('kbd')
+                div1.appendChild(kbd1)
+
+                span1=document.createElement('span')
+                span1.textContent= row[index2]
+                kbd1.appendChild(span1)
+                span1.className = "text"
+                button1 = document.createElement('button')
+                button1.textContent = '编辑'
+                kbd1.appendChild(button1)
+
+                kbd1.className = "key"
+                button1.id = row[index2]
+                
+                if(hash [row[index2]]){
+                    img1.src = 'http://'+hash [row[index2]]+'/favicon.ico'
+                }else{
+                    img1.src ='http://'+
+                }
+                img1=document.createElement('img')
+                img1.src='http://'+hash [row[index2]]+'/favicon.ico'
+                kbd1.appendChild(img1)
+
+                button1.onclick = function (monitor) {
+                    key = monitor['target']['id']
+                    x = prompt('请输入网址')
+                    hash[key] = x
+                    localStorage.setItem('zzz', JSON.stringify(hash))
+                    console.log(hash)
+                }
+                index2 = index2 + 1
+            }
+
+            index = index + 1
+        }
+        document.onkeypress = function (monitor) {
+            key = monitor['key']
+            website = hash[key]
+            //location.href='http://'+website
+            window.open('http://' + website, '_blank')
+        }
+    </script>
+</body>
+
+</html>
