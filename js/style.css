@@ -66,7 +66,9 @@ main{
     width: 16px ;
     height:16px ;
     position: absolute;
-    
+    left: 4px;
+    bottom:2px;
+
 }
 .key .text{
     position: absolute;
