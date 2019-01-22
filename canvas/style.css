@@ -9,6 +9,9 @@ body{
 #canvas {
     background: rgb(246, 248, 246);
     display: block;
+    position:  fixed;
+    top: 0;
+    left: 0;
 
 }
 
