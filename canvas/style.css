@@ -1,8 +1,97 @@
-body{
+*{
     margin: 0;
+    padding: 0;
 }
-#canvas{
+body{
+    overflow: hidden;
+}
+
+#canvas {
+    background: rgb(246, 248, 246);
+    display: block;
+
+}
+
+
+.actions {
+    position: fixed;
+    top: 5px;
+    left: 5px;
+}
+.actions svg {
+    width: 1.5em;
+    height: 1.5em;
+    transition: all 0.3s;
+    margin: 0 10px;
+
+}
+.actions svg.active{
+    fill: red;
+    transform: scale(1.2);
+    transition: all 0.3s;
+}
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+.colors{
+    position: fixed;
+    top:  60px;
+    left: 28px;
+    
+}
+ol{
+    list-style: none;
+}
+.colors>li{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;  
+    margin: 10px 0;
+    border:  1px  #c0c0c0 solid ;
+    transition: all 0.3s;
+}
+.colors>li.red{
     background: red;
-    height: 100vh;
-    position: relative;
+}
+.colors>li.green{
+    background: green;
+}
+.colors>li.blue{
+    background: blue;
+}
+.colors>li.active{
+    box-shadow: 0 0 3px rgb(0, 0, 0, 0.95);
+    transform:scale(1.2);
+    }
+.sizes {
+    position: fixed;
+    right: 20px;
+    top: 10px;
+   
+   
+   
+}
+.sizes > li {
+    margin:20px auto;
+    
+}
+.sizes >.thin {
+    height:10px;
+    width: 10px;
+    border-radius: 50%;
+    background: black;
+
+}
+.sizes >.thick {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: black;
+
+}
+.sizes>li.active{
+    box-shadow: 0 0 3px rgb(0, 0, 0, 0.95);
 }

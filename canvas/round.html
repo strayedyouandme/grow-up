@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Document</title>
     <style>
         body {
@@ -20,21 +21,24 @@
             bottom: 0;
             left: 0;
         }
-        .actions{
+
+        .actions {
             position: fixed;
             bottom: 0;
             left: 0;
         }
-        .actions > #brush{
-            display: none;
-        }
-        .actions.x > #brush{
-            display: inline-block;
-        }
-        .actions.x > #eraser{
+
+        .actions>#brush {
             display: none;
         }
 
+        .actions.x>#brush {
+            display: inline-block;
+        }
+
+        .actions.x>#eraser {
+            display: none;
+        }
     </style>
 </head>
 
@@ -43,8 +47,8 @@
 
     </canvas>
     <div id="actions" class="actions">
-    <button id="eraser">橡皮擦</button>
-    <button id="brush">画笔</button>
+        <button id="eraser">橡皮擦</button>
+        <button id="brush">画笔</button>
     </div>
     <script>
         var canvas = document.getElementById('canvas');
@@ -56,11 +60,11 @@
         var usingEraser = false
         eraser.onclick = function () {
             usingEraser = true
-            actions.className ='actions x'
+            actions.className = 'actions x'
         }
-        brush.onclick =function () {
+        brush.onclick = function () {
             usingEraser = false
-            actions.className ='actions'
+            actions.className = 'actions'
         }
 
 
@@ -132,7 +136,7 @@
             context.stroke()
             context.closePath()
         }
-       
+
         //画圆
         // context.strokeStyle = 'yellow'//stroke描边
         // context.strokeRect(10, 10, 100, 100);
