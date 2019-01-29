@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .parent {
+            position: relative;
+            border: 1px solid red;
+            width: 500px;
+            height: 500px;
+        }
+
+        .left {
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            top: 50%;
+            left: 50%;
+            margin-left: -50px;
+            margin-top: -25px;
+            text-align: center;
+            border: 1px solid red;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="parent clearfix">
+
+        <div class="left"></div>
+
+        <div class="right"></div>
+
+    </div>
+</body>
+
+</html>

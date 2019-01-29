@@ -5,6 +5,19 @@ body{
     margin: 0;
     padding: 0;
 }
+.site-welcome{
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #888;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+
+}
+.site-welcome.active{
+    display: flex;
+}
 a{
     text-decoration: none;
     
@@ -312,7 +325,6 @@ section.portfolio > nav .bar.state-1 .bar-inner{
 }
 .life>.small{
     position: absolute;
-    left:645px;
     
 }
 .life>.big>img{
@@ -322,4 +334,35 @@ section.portfolio > nav .bar.state-1 .bar-inner{
 .life>.small>img{
     width: 293px;
     height: 285px
+}
+.loading{
+    width: 200px;
+    height: 200px;
+    position:relative;
+}
+.loading::before,.loading::after{
+     content: '';
+     position: absolute;
+     width: 0px;
+     height: 0px;
+     background: black;
+     border-radius: 50%;
+     top: 0;
+     left: 0;
+     bottom: 0;
+     right: 0; 
+     margin: auto ;
+     animation: round 1.5s linear infinite;
+
+}
+.loading::after{
+    animation-delay: 0.75s;
+}
+@keyframes round{
+    0%{
+        width: 0px; height: 0px; opacity: 1;
+    }
+    100%{
+        width: 100px;height: 100px; opacity: 0;
+    }
 }
