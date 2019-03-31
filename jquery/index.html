@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>first jquery</title>
+</head>
+<body>
+        <div class="">1</div>
+        <div class="">2</div>
+        <div class="">3</div>
+        <div class="">4</div>
+<script>
+        window.jQuery = function(nodeOrSelector) {
+               let nodes={}; //声明一个对象管理传入选择器选择的对象及其方法
+            if(typeof nodeOrSelector ==='string'){
+                let temp = document .querySelectorAll(nodeOrSelector)
+                //检测到传入为选择器，获取选择的所有对象后存入临时变量
+                for(let i=0; i<temp.length; i++){
+                    nodes[i]=temp[i]
+               }
+            nodes.length =temp.length
+            }else if (nodeOrSelector instanceof Node){      //如果传递的是一个Node节点，则只传递一个节点
+                nodes = {0:nodeOrSelector,length:1}
+            }
+            nodes.addClass  =function (classes) {
+                classes.forEach((value) => {
+                    for(let i=0;i<nodes.length;i++){
+                        nodes[i].classList.add(value)
+                    }
+                })
+            }
+
+            nodes.setText =function (text) {
+                if(text === undefined){
+                    var texts = []
+                    for (let i=0; i<nodes.length;i++) {
+                        texts.push(nodes[i].textContent)
+                    }
+                    return texts
+                } else {
+                    for (let i=0; i<nodes.length;i++){
+                        nodes[i].textContent = text
+                  }
+                }
+            }
+            return nodes
+        }
+        window.$ = jQuery
+
+    var $div = $('div')
+    console.log($div.setText())
+    $div.addClass(['red']) // 可将所有 div 的 class 添加一个 red
+    $div.setText('hi') // 可将所有 div 的 textContent 变为 hi
+</script>
+</body>
+</html>
