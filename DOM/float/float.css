@@ -1,0 +1,33 @@
+.wrapper{
+    display: inline-block;
+    position: relative;
+
+}
+.popover{
+    position: absolute;
+    top: 0;
+    left: 100% ;
+    outline: 1px solid red;
+    background: white;
+    padding: 10px;
+    white-space: nowrap;
+    margin-left: 10px;
+    display: none;
+}
+.popover::before{
+     position: absolute;
+     right: 100%;
+     top: 5px;
+     border: 10px solid transparent;
+     border-right-color:red ;
+     content: '';
+ }
+.popover::after{
+    position: absolute;
+    right: 100%;
+    top: 5px;
+    border: 10px solid transparent;
+    border-right-color:white ;
+    content: '';
+    margin-right:-1px ;
+}
