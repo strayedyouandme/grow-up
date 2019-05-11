@@ -36,7 +36,7 @@ function goToSlide(index){
 
     if(current === $buttons.length -1 && index === 0){
 
-        console.log('here')
+        
         $slides.css({transform:`translateX(${-($buttons.length + 1) * 400}px)`})
             .one('transitionend', function(){
                 $slides.hide()
