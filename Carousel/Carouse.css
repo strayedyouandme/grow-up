@@ -1,14 +1,16 @@
-.images{
-    display: flex;
-    align-items: flex-start;
-    transition:transform 0.5s;
-}
-.images>img{
-}
+.*{margin:0;padding:0;}
+*{box-sizing: border-box;}
+
 .window{
-    width: 300px;
+    width: 400px;
+    height: 300px;
+    margin: 20px auto;
     overflow: hidden;
 }
-.red{
-    color: red;
+.images{
+    display: flex;
+    transition: all 1s;
+}
+.images > img{
+    width: 100%;
 }

@@ -1,65 +1,67 @@
-var allButtons = $('#buttons > button');
-for (let i=0; i<allButtons.length;i++){
+let $buttons = $('#buttonWrapper>button')
+let $slides = $('#slides')
+let $images = $slides.children('img')
+let current = 0
 
+makeFakeSlides()
+$slides.css({transform:'translateX(-400px)'})
+bindEvents()
+
+
+let timer = setInterval(function(){
+    goToSlide(current+1)
+},2000)
+$('.container').on('mouseenter', function(){
+    window.clearInterval(timer)
+}).on('mouseleave', function(){
+    timer = setInterval(function(){
+        goToSlide(current+1)
+    },2000)
+})
+
+function bindEvents(){
+    $('#buttonWrapper').on('click', 'button', function(e){
+        let $button = $(e.currentTarget)
+        let index = $button.index()
+        goToSlide(index)
+    })
 }
 
-// var allButtons =$('#buttons > button');
-// for (let i=0;i<allButtons.length;i++){
-//     $(allButtons[i]).on('click',function (x) {
-//         var index = $(x.currentTarget).index();
-//         var n = index * -300;
-//         $('#images').css({
-//             transform:'translate(' + n + 'px)'
-//         });
-//             n = index;
-//             activeButton(allButtons.eq(n))
-//
-//     })
-// }
-// var n=0;
-// var size = allButtons.length;
-// allButtons.eq(n%3).trigger('click');
-// activeButton(allButtons.eq(n % size));
-//
-// var timerId = setTimer();
-// function playSlide(index) {
-//     allButtons.eq(index).trigger('click')
-//
-// }
-// function activeButton($button){
-//     $button
-//         .addClass('red')
-//         .siblings('.red').removeClass('red')
-// }
-// function setTimer(){
-//     return setInterval(()=>{
-//         n +=1;
-//         playSlide(n % size)
-//     },1000)
-// }
-//
-// $('.window').on('mouseenter',function(){
-//     window.clearInterval(timerId)
-// });
-//
-//
-// $('.window').on('mouseleave', function() {
-//     timerId = setTimer()
-// })
+function goToSlide(index){
+    if(index > $buttons.length-1){
+        index = 0
+    }else if(index <0){
+        index = $buttons.length - 1
+    }
 
+    if(current === $buttons.length -1 && index === 0){
 
-// $(p1).on('click',function () {
-//     $(images).css({
-//         transform:'translateX(0)'
-//     })
-// })
-// $(p2).on('click',function () {
-//     $(images).css({
-//         transform:'translateX(-300px)'
-//     })
-// })
-// $(p3).on('click',function () {
-//     $(images).css({
-//         transform:'translateX(-600px)'
-//     })
-// })
+        console.log('here')
+        $slides.css({transform:`translateX(${-($buttons.length + 1) * 400}px)`})
+            .one('transitionend', function(){
+                $slides.hide()
+                $slides.offset()
+                $slides.css({transform:`translateX(${-(index+1)*400}px)`}).show()
+            })
+
+    }else if(current === 0 && index === $buttons.length - 1){
+
+        $slides.css({transform:`translateX(0px)`})
+            .one('transitionend', function(){
+                $slides.hide().offset()
+                $slides.css({transform:`translateX(${-(index+1)*400}px)`}).show()
+            })
+
+    }else{
+        $slides.css({transform:`translateX(${- (index+1) * 400}px)`})
+    }
+    current = index
+}
+
+function makeFakeSlides(){
+    let $firstCopy = $images.eq(0).clone(true)
+    let $lastCopy = $images.eq($images.length-1).clone(true)
+
+    $slides.append($firstCopy)
+    $slides.prepend($lastCopy)
+}
