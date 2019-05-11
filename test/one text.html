@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <style>
+        .text{
+            border: 1px solid red;
+            line-height: 24px;
+            width: 100px;
+            overflow : hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+    </style>
+    <title>多行文本过长就变成省略号</title>
 </head>
 <body>
-$END$
+    <div class="text">
+        1111111111111111111
+        1111111111111111111
+        1111111111111111111
+        1111111111111111111
+        1111111111111111
+    </div>
 </body>
 </html>
