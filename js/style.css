@@ -29,6 +29,7 @@ main{
       justify-content: center; /*左右居中 */
        align-items: center;/*垂直居中 */
        height: 100vh;
+       
 }
 #m1{
     display: inline-block;
@@ -41,12 +42,12 @@ main{
     margin-left: -80px;
 }
 .key{
-    width: 47px;
-    height: 69px;
+    width: 24px;
+    height: 46px;
     border-radius: 4px;
     padding: 0 12px;
     color: #fff;
-    font-size: 24px;
+    font-size: 15px;
     box-shadow: 0 0 0 1px #1A1B1C, 0 0 0 2px #1F2020, 0 3px 0 2px #080808;
     /* display: inline-flex;
     align-items: center;
@@ -58,13 +59,14 @@ main{
     background: linear-gradient(to bottom, #292929 0%,#111111 100%);
 }
 .wrapper{
-    /* background: rgba(255, 255, 255, 0.2); */
-    /* border-radius: 10px; */
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 10px; 
 
 }
 .key img{
-    width: 16px ;
-    height:16px ;
+    width: 10px ;
+    height:10px ;
     position: absolute;
     left: 4px;
     bottom:2px;
