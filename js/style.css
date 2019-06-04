@@ -3,7 +3,7 @@ a{
     text-decoration: none; 
 }
 body{
-    background: red url(./img/1-min.jpg) no-repeat center center;
+    background:url(./img/1-min.jpg) no-repeat center center;
     background-size: cover;
 }
 kbd{
